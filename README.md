@@ -119,12 +119,12 @@ if (response.status == ResponseStatus.pending) {
 
 Examples for see the `/example` folder.
 
-**Here is the example code** [link](https://github.com/programmingwormhole/uddoktapay/blob/main/example/lib/main.dart)
+**Here is the example code** [link](https://github.com/programmingwormhole/uddoktapay/blob/master/example/lib/main.dart)
 
 **Example Video Demo**
 
 <div align="center">
-  <video src="https://github.com/codeboxrcodehub/flutter-bkash/assets/19654129/5f9e12ee-b5cb-4dc2-a522-0c631f1f7032" controls></video>
+  <video src="https://github.com/programmingwormhole/uddoktapay/raw/master/demo.mp4" controls></video>
 </div>
 
 
