@@ -1,5 +1,6 @@
 
 
+
 <p align="center" >  
 <img src="https://uddoktapay.com/assets/images/logo.png">  
 </p>  
@@ -25,7 +26,7 @@ This is a [Flutter package](https://pub.dev/packages/uddoktapay) for [UddoktaPay
 
 Check the package in <a target="_blank" href="https://github.com/programmingwormhole/uddoktapay" rel="noopener">github</a> and also available in <a href="https://pub.dartlang.org/packages/uddoktapay" rel="noopener nofollow" target="_blank">flutter/dart package</a>
 
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/no.name.virus) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/no.name.virus) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mdshirajulislam-dev) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@programmingwormhole)
+[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/programmingwormhole)  [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/no.name.virus) [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/no.name.virus) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mdshirajulislam-dev) [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@programmingwormhole)
 
 ## How to use:
 Depend on it, Run this command With Flutter:
@@ -35,7 +36,7 @@ $ flutter pub add uddoktapay
 This will add a line like this to your package's `pubspec.yaml` (and run an implicit **`flutter pub get`**):
 ```  
 dependencies:  
-uddoktapay: ^0.0.2  
+uddoktapay: ^0.0.3  
 ```  
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more. Import it, Now in your Dart code, you can use:
 ```  
