@@ -35,7 +35,7 @@ $ flutter pub add uddoktapay
 This will add a line like this to your package's `pubspec.yaml` (and run an implicit **`flutter pub get`**):
 ```  
 dependencies:  
-uddoktapay: ^0.0.1  
+uddoktapay: ^0.0.2 
 ```  
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more. Import it, Now in your Dart code, you can use:
 ```  
@@ -54,27 +54,27 @@ Official Link for API documentation and demo checkout
 ***Sandbox***
 ```  
 UddoktaPay.createPayment(  
-context: context,  
-customer: CustomerDetails(  
-fullName: 'Programming Wormhole',  
-email: 'programmingwormhole@icloud.com',  
-),  
-amount: '50',  
+    context: context,  
+    customer: CustomerDetails(  
+    fullName: 'Programming Wormhole',  
+    email: 'programmingwormhole@icloud.com',  
+    ),  
+    amount: '50',  
 );  
 ```  
 ***Production***
 ```  
 UddoktaPay.createPayment(  
-context: context,  
-customer: CustomerDetails(  
-fullName: 'Programming Wormhole',  
-email: 'programmingwormhole@icloud.com',  
-),  
-amount: '50',  
-credentials: UddoktapayCredentials(  
-apiKey: 'api_key',  
-panelURL: 'https://pay.domain.com',  
-),  
+    context: context,  
+    customer: CustomerDetails(  
+    fullName: 'Programming Wormhole',  
+    email: 'programmingwormhole@icloud.com',  
+    ),  
+    amount: '50',  
+    credentials: UddoktapayCredentials(  
+    apiKey: 'api_key',  
+    panelURL: 'https://pay.domain.com',  
+    ),  
 )  
 ```  
 > Make sure to replace the provided credentials with your own UddoktaPay production credentials.
@@ -82,39 +82,39 @@ panelURL: 'https://pay.domain.com',
 ***Response***
 ```  
 final response = await UddoktaPay.createPayment(  
-....  
-....  
+    ....  
+    ....  
 )  
 ```  
 
 ***Response Sample***
 ```  
 RequestResponse(  
-fullName: "Programming Wormhole",  
-email: "programmingwormhole@icloud.com",  
-amount: "50.00","fee":"0.00",  
-chargedAmount: "50.00",  
-invoiceId: "a19Aun0gPxIqBVjnCfpL",  
-paymentMethod: "bkash",  
-senderNumber: "675675656765",  
-transactionId: "FGHGFHJGHG",  
-date: "2024-04-09 12:01:28",  
-status: ResponseStatus.completed,  
+    fullName: "Programming Wormhole",  
+    email: "programmingwormhole@icloud.com",  
+    amount: "50.00","fee":"0.00",  
+    chargedAmount: "50.00",  
+    invoiceId: "a19Aun0gPxIqBVjnCfpL",  
+    paymentMethod: "bkash",  
+    senderNumber: "675675656765",  
+    transactionId: "FGHGFHJGHG",  
+    date: "2024-04-09 12:01:28",  
+    status: ResponseStatus.completed,  
 );  
 ```  
 ### Error Handling
 The methods mentioned above may throw a `status`. You can catch and handle the status using a if-else block:
 ```  
 if (response.status == ResponseStatus.completed) {  
-// handle on complete  
+    // handle on complete  
 }  
   
 if (response.status == ResponseStatus.canceled) {  
-// handle on cancel  
+    // handle on cancel  
 }  
   
 if (response.status == ResponseStatus.pending) {  
-// handle on pending  
+    // handle on pending  
 }  
 ```  
 
