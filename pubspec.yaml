@@ -1,6 +1,6 @@
 name: uddoktapay
 description: "Flutter package for UddoktaPay by Programming Wormhole"
-version: 0.0.3
+version: 0.0.4
 homepage: https://programmingwormhole.com
 repository: https://github.com/programmingwormhole/uddoktapay
 issue_tracker: https://github.com/programmingwormhole/uddoktapay/issues
@@ -15,7 +15,7 @@ screenshots:
   - https://lh3.googleusercontent.com/p/AF1QipMncwNApi_xHTH1niw3xbkwq3I1FnY1RL_Xi07s=s1360-w1360-h1020
 
 environment:
-  sdk: '>=3.2.6 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
