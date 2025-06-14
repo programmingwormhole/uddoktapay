@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:uddoktapay/models/credentials.dart';
 import 'package:uddoktapay/models/customer_model.dart';
 import 'package:uddoktapay/models/request_response.dart';
 import 'package:uddoktapay/uddoktapay.dart';
@@ -91,14 +92,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           fullName: 'Programming Wormhole',
                           email: 'programmingwormhole@icloud.com',
                         ),
-                        amount: '50',
+                        amount: '1',
+                        credentials: UddoktapayCredentials(
+                          apiKey: '',
+                          panelURL: '',
+                          redirectURL: '',
+                        ),
                       );
-
-
 
                       if (response.status == ResponseStatus.completed) {
                         // handle on complete
-                        snackBar('Success. TRX_ID ${response.invoiceId}', context);
+                        snackBar(
+                            'Success. TRX_ID ${response.invoiceId}', context);
                       }
 
                       if (response.status == ResponseStatus.canceled) {

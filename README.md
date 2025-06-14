@@ -75,6 +75,7 @@ amount: '50',
 credentials: UddoktapayCredentials(  
 apiKey: 'api_key',  
 panelURL: 'https://pay.domain.com',  
+redirectURL: 'domain.com', // The selected valid domain from uddoktapay panel
 ),  
 )  
 ```  

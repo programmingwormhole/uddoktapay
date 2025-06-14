@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:uddoktapay/controllers/payment_controller.dart';
 import 'package:uddoktapay/models/customer_model.dart';
 import 'package:uddoktapay/models/request_response.dart';
+import 'package:uddoktapay/utils/config.dart';
 import 'package:uddoktapay/views/payment_screen.dart';
 import '../core/services/api_services.dart';
 import '../models/credentials.dart';
@@ -24,7 +25,12 @@ class UddoktaPay {
       customer: customer,
       amount: amount,
       context: context,
+      uddoktapayCredentials: credentials,
     );
+
+    print(credentials);
+
+    print('Request -=---- $request');
 
     final String paymentURL = request['payment_url'];
 
@@ -40,6 +46,8 @@ class UddoktaPay {
       MaterialPageRoute(
         builder: (_) => PaymentScreen(
           paymentURL: request['payment_url'],
+          redirectURL: credentials == null ? AppConfig.redirectURL : credentials.redirectURL,
+          cancelURL: credentials == null ? AppConfig.cancelURL : '${credentials.panelURL}checkout/cancel',
         ),
       ),
     );

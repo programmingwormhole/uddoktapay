@@ -1,5 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uddoktapay/controllers/payment_controller.dart';
@@ -9,10 +11,14 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentScreen extends StatefulWidget {
   final String paymentURL;
+  final String redirectURL;
+  final String cancelURL;
 
   const PaymentScreen({
     super.key,
     required this.paymentURL,
+    required this.redirectURL,
+    required this.cancelURL,
   });
 
   @override
@@ -25,13 +31,25 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   void initState() {
+
+    print('Redirect : ${widget.redirectURL}');
+    print('Cancel : ${widget.cancelURL}');
+
     super.initState();
     _webViewController = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
         NavigationDelegate(
           onNavigationRequest: (NavigationRequest request) async {
-            if (request.url.startsWith(AppConfig.redirectURL)) {
+
+            print('Request url is ${request.url}');
+
+            final uri = Uri.parse(request.url);
+            final invoiceID = uri.queryParameters['invoice_id'];
+            final status = uri.queryParameters['status'];
+
+            if (uri.path.contains(widget.redirectURL) || uri.host.contains(widget.redirectURL) || uri.path.contains('invoiceID')) {
+
               controller.isPaymentVerifying.value = true;
 
               Uri uri = Uri.parse(request.url);
@@ -51,7 +69,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               return NavigationDecision.prevent;
             }
 
-            if (request.url.startsWith(AppConfig.cancelURL)) {
+            if (request.url.startsWith(widget.cancelURL)) {
               controller.isPaymentVerifying.value = false;
 
               if (context.mounted) {

@@ -26,11 +26,14 @@ class ApiServices {
       'email': customer.email,
       'amount': amount,
       'metadata': metadata ?? {"order_id": "10", "product_id": "5"},
-      'redirect_url': AppConfig.redirectURL,
-      'cancel_url': AppConfig.cancelURL,
+      'redirect_url': uddoktapayCredentials == null ? AppConfig.redirectURL : uddoktapayCredentials.redirectURL,
+      'cancel_url': uddoktapayCredentials == null ? AppConfig.cancelURL : '${uddoktapayCredentials.panelURL}checkout/cancel',
       'return_type': 'GET',
       if (webhookUrl != null) 'webhook_url': webhookUrl,
     };
+
+
+    print('Request Data $requestData');
 
     final controller = Get.put(PaymentController());
 
